@@ -19,7 +19,7 @@ pregunta_schema = PreguntaSchema()
 respuesta_schema = RespuestaSchema()
 
 
-class VistaPregunta(Resource):
+"""class VistaPregunta(Resource):
    # @jwt_required()
     def get(self, id_receta):
         receta = Receta.query.get_or_404(id_receta)
@@ -36,19 +36,20 @@ class VistaPregunta(Resource):
                         recetaIngrediente["ingrediente"]["costo"]
                     )
 
-        return resultados
+        return resultados"""
     
 
 
 class VistaRespuesta(Resource):
    # @jwt_required()
-    def get(self, id_pregunta, id_respuesta):
+    def get(self):
         #pregunta = Pregunta.query.get_or_404(id_pregunta)
-        respuesta = Respuesta.query.get_or_404(id_respuesta)
+        #respuesta = Respuesta.query.get_or_404(id_respuesta)
+        #pregunta = Respuesta.query.get_or_404(id_pregunta)
         #ingredientes = Ingrediente.query.all()
         #resultados = receta_schema.dump(Receta.query.get_or_404(id_receta))
         #recetaIngredientes = resultados["ingredientes"]
-        match(self.random.randrange(5)) :
+        match(random.randrange(10)) :
             case 0:
                 return { "mensaje": "No encontramos la respuesta" }, 404
             case 1:

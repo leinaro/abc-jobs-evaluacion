@@ -15,7 +15,7 @@ db = SQLAlchemy()
 class Pregunta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     enunciado = db.Column(db.String(128))
-    respuestas = db.relationship("Solucion")
+    respuestas = db.relationship("Respuesta")
 
 class Respuesta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,62 +45,3 @@ class PreguntaSchema(SQLAlchemyAutoSchema):
     id = fields.String()
     enunciado = fields.String()
     respuestas = fields.List(fields.Nested(RespuestaSchema()))
-
-
-
-
-class RecetaIngredienteSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = RecetaIngrediente
-        include_relationships = True
-        include_fk = True
-        load_instance = True
-
-    id = fields.String()
-    cantidad = fields.String()
-    ingrediente = fields.String()
-
-
-class RecetaSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = Receta
-        include_relationships = True
-        include_fk = True
-        load_instance = True
-
-    id = fields.String()
-    duracion = fields.String()
-    porcion = fields.String()
-    ingredientes = fields.List(fields.Nested(RecetaIngredienteSchema()))
-
-
-class UsuarioSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = Usuario
-        include_relationships = True
-        load_instance = True
-
-    id = fields.String()
-
-
-class MenuRecetaSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = MenuReceta
-        include_relationships = True
-        include_fk = True
-        load_instance = True
-
-    receta = fields.String()
-
-
-class MenuSemanaSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = MenuSemana
-        include_relationships = True
-        load_instance = True
-
-    id = fields.String()
-    nombre = fields.String()
-    fecha_inicial = fields.Date()
-    fecha_final = fields.Date()
-    recetas = fields.List(fields.Nested(MenuRecetaSchema()))

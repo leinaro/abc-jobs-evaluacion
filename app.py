@@ -6,7 +6,7 @@ from flask_restful import Api
 from modelos import db
 
 from vistas import (
-    VistaEvaluacion
+    VistaRespuesta
 )
 
 app = Flask(__name__)
@@ -24,6 +24,6 @@ db.create_all()
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 api = Api(app)
-api.add_resource(VistaEvaluacion, "/evalular_pregunta")
+api.add_resource(VistaRespuesta, "/evalular_pregunta")
 
 jwt = JWTManager(app)
