@@ -24,6 +24,6 @@ db.create_all()
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 api = Api(app)
-api.add_resource(VistaRespuesta, "/evalular_pregunta")
+api.add_resource(VistaRespuesta, "/evaluar_pregunta/<int:id_pregunta>/<int:id_respuesta>")
 
 jwt = JWTManager(app)

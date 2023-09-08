@@ -42,7 +42,7 @@ respuesta_schema = RespuestaSchema()
 
 class VistaRespuesta(Resource):
    # @jwt_required()
-    def get(self):
+    def post(self, id_pregunta, id_respuesta):
         #pregunta = Pregunta.query.get_or_404(id_pregunta)
         #respuesta = Respuesta.query.get_or_404(id_respuesta)
         #pregunta = Respuesta.query.get_or_404(id_pregunta)
@@ -59,7 +59,7 @@ class VistaRespuesta(Resource):
             case 3:
                 return { "mensaje": "No sabemos que paso" }, 500
             case _:
-                return { "mensaje": "la respuestaz es correcta respuesta es correcta" }
+                return { "mensaje": "La respuesta es correcta" }, 200
 
 
         
