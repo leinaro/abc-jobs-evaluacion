@@ -43,6 +43,12 @@
 ### 4) ejecutar el comando
     k6 run script.js --out json=Experimento1.json --out csv=Experimento1.csv --log-output=file=Experimento1.log
 
+## salida en consola
+
+![image](https://github.com/tom-uniandes/abc-jobs-gateway/assets/123895702/490afc11-e324-48c0-b1de-6608e9f25851)
+
+
+
 ### 5) validar los archivos  
     Experimento1.json 
     Experimento1.csv 
@@ -50,8 +56,13 @@
 
 ### 6) validar el archivo 
     Experimento1.html
+
+![image](https://github.com/tom-uniandes/abc-jobs-gateway/assets/123895702/eae3b2e8-3336-414e-9456-c63a0f78cb82)
+
     
-    ir a la seccion Checks & Groups
+## ir a la seccion Checks & Groups
+![image](https://github.com/tom-uniandes/abc-jobs-gateway/assets/123895702/b08e1059-e018-40d9-85ea-f6030ca08854)
+
 
 
 # **************************integracion con grafana**************************
